@@ -11,6 +11,10 @@ import {GetusersService} from '../services/getusers.service';
 })
 export class TablesideComponent implements OnInit {
   
+  constructor(private service: GetusersService) {
+    // this.service.getUsers(this.filtername, this.page).subscribe(res => console.log(res));
+  }
+
   filtername = "";
   page = 1;
   maxSize = 7;
@@ -39,22 +43,24 @@ export class TablesideComponent implements OnInit {
     this.service.getUsers(this.filtername, String(this.page)).subscribe(res => {
       this.users = res;
       this.count_pages = this.users.meta.pagination.pages * 20;
-      // this.curr_pages = this.users.meta.pagination.page;
     });
+  }
+
+  ngOnInit(): void {
+    this.loadUsers();
   }
 
   pageChanged(event: PageChangedEvent): void {
     this.page = event.page;
     this.loadUsers();
   }
-
-  constructor(private service: GetusersService) {
-    // this.service.getUsers(this.filtername, this.page).subscribe(res => console.log(res));
-  }
-
-  ngOnInit(): void {
-    this.loadUsers();
-  }
  
+  open_link(event) {
+      var target = event.target;
+      var idAttr = target.attributes.id;
+      var value = idAttr.nodeValue;
+      var url = "/posts?userId="+String(value);
+      window.open(url, "_blank");
+  }
 
 }

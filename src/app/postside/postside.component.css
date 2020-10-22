@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+  padding: 10px;
+}
+
+.column {
+  float: left;
+  width: 33%;
+  height: 550px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin: 10px;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  background-color: #f1f1f1;
+  height: 500px;
+}
+
+.cardbody {
+  position:absolute;
+  text-align: justify;
+  text-justify: inter-word;
+  top:35px;
+  right: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.datetime{
+  position:absolute;
+  top:5px;
+  right: 5px;
+  float: right;
+  font-size: 11px;
+ }

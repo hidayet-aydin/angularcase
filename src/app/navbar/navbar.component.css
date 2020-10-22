@@ -9,6 +9,12 @@ a {
     padding: 15px;
 }
 
+p {
+    float: right;
+    color: white;
+    text-decoration: none;
+}
+
 a:hover {
     background-color: #2076c7;
 }

@@ -1,1 +1,18 @@
-<p>postside works!</p>
+<h3>{{this.user_info.data[0].name}}</h3>
+
+<!-- <p>postside works!</p> -->
+
+<div class="container">
+
+    <div class="column" *ngFor="let post of posts.data">
+      <div class="card">
+        <p class="datetime">{{post.created_at}}</p>
+        <div class="cardbody">
+            <b>{{post.title}}</b>
+            <br><br>
+            <p>{{post.body}}</p>
+        </div>
+      </div>
+    </div>
+  
+  </div>

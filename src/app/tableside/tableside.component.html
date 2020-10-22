@@ -1,14 +1,5 @@
 <!-- <p>tableside works!</p> -->
 
-<!-- <div class="row">
-    <div class="col-xs-12 col-12">
-      <div class="content-wrapper">
-        <p class="content-item" *ngFor="let content of returnedArray">{{content}}</p>
-      </div>
-      <pagination [totalItems]="contentArray.length" (pageChanged)="pageChanged($event)"></pagination>
-    </div>
-  </div> -->
-
 <div class="container">
   <input type="text" placeholder="Name Filter" [(ngModel)]="filtername" (change)="loadUsers(true)">
   <table class="table table-bordered">
@@ -27,7 +18,10 @@
         <td>{{user.email}}</td>
         <td>{{user.gender}}</td>
         <td>{{user.status}}</td>
-        <td> <button> View Posts </button> </td>
+        <td> <input id="{{user.id}}" type="button" value="View Posts" (click)="open_link($event)" /> </td> 
+        <!-- <td>
+          <a [routerLink]="user" [queryParams]="[user.id]"> State Details </a>
+        </td> -->
       </tr>
     </tbody>
     <pagination [totalItems]="count_pages" [(ngModel)]="page" [maxSize]="maxSize" (pageChanged)="pageChanged($event)"
