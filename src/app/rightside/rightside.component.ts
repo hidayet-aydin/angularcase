@@ -12,4 +12,12 @@ export class RightsideComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  open_link(event) {
+    var target = event.target;
+    var idAttr = target.attributes.id;
+    var value = idAttr.nodeValue;
+    var url = "/posts?userId="+String(value);
+    window.open(url, "_blank");
+  }
+
 }

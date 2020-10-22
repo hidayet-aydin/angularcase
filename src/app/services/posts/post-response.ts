@@ -15,6 +15,7 @@ export interface PostResponse {
         title: string;
         body: string;
         created_at: Date;
+        created_at_str: string;
         updated_at: Date;
     }[];
 

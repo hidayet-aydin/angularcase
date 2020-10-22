@@ -32,7 +32,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PostsideComponent],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

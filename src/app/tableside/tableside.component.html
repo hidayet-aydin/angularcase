@@ -19,9 +19,6 @@
         <td>{{user.gender}}</td>
         <td>{{user.status}}</td>
         <td> <input id="{{user.id}}" type="button" value="View Posts" (click)="open_link($event)" /> </td> 
-        <!-- <td>
-          <a [routerLink]="user" [queryParams]="[user.id]"> State Details </a>
-        </td> -->
       </tr>
     </tbody>
     <pagination [totalItems]="count_pages" [(ngModel)]="page" [maxSize]="maxSize" (pageChanged)="pageChanged($event)"

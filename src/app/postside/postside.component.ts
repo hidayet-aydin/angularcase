@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 // added
 import { ActivatedRoute } from '@angular/router';
 import {GetusersService} from '../services/getusers.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-postside',
@@ -30,6 +31,7 @@ export class PostsideComponent implements OnInit {
         title: string;
         body: string;
         created_at: Date;
+        created_at_str: string;
         updated_at: Date;
     }[]};
     user_info: {code: number,
@@ -61,6 +63,10 @@ export class PostsideComponent implements OnInit {
 
     this.service.getPosts(String(this.userId)).subscribe(res => {
       this.posts = res;
+      this.posts.data.forEach( (myObject, index) => {
+        myObject.created_at_str = moment(myObject.created_at).format('DD/MM/YYYY hh:mm');
+      });
+
     });
   }
 

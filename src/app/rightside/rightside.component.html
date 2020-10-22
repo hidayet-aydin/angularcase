@@ -1,1 +1,36 @@
-<p>rightside works!</p>
+
+
+<div class="container">
+    
+    <div class="column" > 
+        <p style="text-align:center">Lastest Viewed Users</p>
+
+        <div class="card"> <!-- *ngFor="let user of eachUser" -->
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td rowspan="3">
+                        <!-- <input id="{{user.id}}" type="button" value="View Posts" (click)="open_link($event)" /> -->
+                        <input id="3" type="button" value="View Posts" (click)="open_link($event)" />
+                    </td>
+                </tr>
+                <tr> <td>Email</td> </tr>
+                <tr> <td>Gender</td> </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <table>
+                <tr>
+                    <td>Name2</td>
+                    <td rowspan="3">
+                        <input id="193" type="button" value="View Posts" (click)="open_link($event)" />
+                    </td>
+                </tr>
+                <tr> <td>Email2</td> </tr>
+                <tr> <td>Gender2</td> </tr>
+            </table>
+        </div>
+
+    </div>
+  </div>
